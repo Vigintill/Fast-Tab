@@ -8,5 +8,5 @@ iframe:not([tabindex='-1']),
 [tabindex]:not([tabindex='-1']),
 [contentEditable=true]:not([tabindex='-1'])
 {
-    border: solid 2px yellow;
+    border: solid 1px yellow;
 }

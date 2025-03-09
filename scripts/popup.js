@@ -83,7 +83,7 @@ async function focus() {
                 files: ["styles/highlight.css"]
             });
             
-            disableContentScript(tab)
+            disableContentScript(currentTab)
         }
 
         chrome.scripting.executeScript({
