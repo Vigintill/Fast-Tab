@@ -8,7 +8,6 @@ async function popup() {
 
     const focus_btn = document.getElementById("focus");
     focus_btn.addEventListener('click', focus)
-
 }
 
 async function getCurrentTab() {
@@ -65,7 +64,9 @@ function disableContentScript(tab) {
 }
 
 async function focus() {
-    if (input.value != '') {
+
+    if (input.value != "") {
+
         const currentTab = (await getCurrentTab())
 
         const prevState = await chrome.action.getBadgeText({ tabId: currentTab.id});
@@ -90,14 +91,16 @@ async function focus() {
             func: setInputValue,
             args : [ input.value ]
         });
+
         window.close();
+
         chrome.scripting.executeScript({
             target: {tabId: currentTab.id},
             files: ["scripts/focus.js"]
         });
     }
     else {
-
+        console.log("No input");
     }
 }
 
