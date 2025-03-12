@@ -1,4 +1,4 @@
-a[href]:not([tabindex='-1']),
+/* a[href]:not([tabindex='-1']),
 area[href]:not([tabindex='-1']),
 input:not([disabled]):not([tabindex='-1']),
 select:not([disabled]):not([tabindex='-1']),
@@ -8,5 +8,39 @@ iframe:not([tabindex='-1']),
 [tabindex]:not([tabindex='-1']),
 [contentEditable=true]:not([tabindex='-1'])
 {
-    border: solid 1px yellow;
+  --content: 10;
+} */
+
+/* html {
+  counter-reset: list-number;
+} */
+
+/* :root{
+  --content: '99';
+} */
+
+a[href]:not([tabindex='-1'])::after,
+area[href]:not([tabindex='-1'])::after,
+input:not([disabled]):not([tabindex='-1'])::after,
+select:not([disabled]):not([tabindex='-1'])::after,
+textarea:not([disabled]):not([tabindex='-1'])::after,
+button:not([disabled]):not([tabindex='-1'])::after,
+iframe:not([tabindex='-1'])::after,
+[tabindex]:not([tabindex='-1'])::after,
+[contentEditable=true]:not([tabindex='-1'])::after
+{
+    
+    content: var(--content);
+
+    margin-right: 10px;
+    margin-bottom:10px;
+    width:35px;
+    height:35px;
+    display:inline-flex;
+    align-items:center;
+    justify-content: center;
+    font-size:16px;
+    background-color:#d7385e;
+    border-radius:50%;
+    color:#fff;
 }
