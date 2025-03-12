@@ -28,21 +28,21 @@ async function count() {
     });
 
     getCurrentTab().then(async (tab) => {
-        if (prevState === "OFF") {
+        if (prevState === "OFF") {           
+            
+            injectContentScript(tab)
+            
             chrome.scripting.insertCSS({
                 target: {tabId: tab.id},
                 files: ["styles/highlight.css"]
             });
-
-            injectContentScript(tab)
         }
         else {
+            
             chrome.scripting.removeCSS({
                 target: {tabId: tab.id},
                 files: ["styles/highlight.css"]
             });
-            
-            disableContentScript(tab)
         }
     })
 }

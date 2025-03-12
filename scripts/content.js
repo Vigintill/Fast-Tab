@@ -3,6 +3,5 @@ elements_inner = [];
 
 console.log(elements.length);
 for (let i = 0; i < elements.length; i++) {
-    elements_inner.push(elements[i].innerHTML.toString());
-    elements[i].innerHTML = i + ". " + elements[i].innerHTML;
+    elements[i].style.setProperty('--content', `\'${i}\'`);
 }
