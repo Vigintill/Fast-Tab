@@ -55,14 +55,6 @@ function injectContentScript(tab) {
     })
 }
 
-function disableContentScript(tab) {
-    const {id, url} = tab;
-    chrome.scripting.executeScript({
-        target: {tabId: id, allFrames: true},
-        files: ['scripts/disable_content.js']
-    })
-}
-
 async function focus() {
 
     if (input.value != "") {
@@ -83,7 +75,6 @@ async function focus() {
                 files: ["styles/highlight.css"]
             });
             
-            disableContentScript(currentTab)
         }
 
         chrome.scripting.executeScript({
