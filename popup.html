@@ -1,10 +1,16 @@
 <html>
     <body>
-        <h1>Fast Tab</h1>
+        <div>
+            <h1>Fast Tab</h1>
+        </div>    
         <br>
-        <input tabindex="2" type="text" id="input">
-        <button tabindex="1" id="show">SHOW</button>
-        <button tabindex="3" id="focus">FOCUS</button>
+        <div>
+            <input tabindex="2" type="text" id="input" style="margin-bottom: 10px; border: solid 1px; border-radius: 4px;">
+            <div style="display: -ms-inline-grid;">
+                <button tabindex="1" id="show" style="width: 49%; border: solid 1px; background: #F2C4C4;">SHOW</button>
+                <button tabindex="3" id="focus" style="width: 49%; border: solid 1px; background: #f2f0c4;">FOCUS</button>
+            </div>
+        </div>
 
         <script src="scripts/popup.js"></script>
     </body>
